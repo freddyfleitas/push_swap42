@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:51:32 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/04/08 18:39:53 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/04/09 20:22:19 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,17 @@ int main(int argc, char **argv)
 		ft_printf("Error\n");
 		return (0);
 	}
-	if (argc == 2)
+	else if (argc == 2)
+	{
 		argv = ft_split(argv[1], ' ');
-	//Iniciar stack.
+		stack_init(&stack_a, argv);
+	}
+	else
+		stack_init(&stack_a, argv + 1);
+	while (stack_a)
+	{
+		ft_printf("%d\n", stack_a->val);
+		stack_a = stack_a->next;
+	}
 	return (0);
 }

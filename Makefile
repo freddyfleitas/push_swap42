@@ -6,7 +6,7 @@
 #    By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/28 16:03:03 by ffleitas          #+#    #+#              #
-#    Updated: 2024/02/28 16:24:32 by ffleitas         ###   ########.fr        #
+#    Updated: 2024/04/09 20:04:58 by ffleitas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,11 +14,11 @@ NAME = push_swap
 
 LIBFT = libft/libftprintf.a
 
-SRC = push_swap.c
+SRC = push_swap.c stack_init.c push_swap_utils.c error_handler.c
 
 OBJS = $(SRC:.c=.o)
 
-CC = gcc -Wall -Wextra -Werror
+CC = gcc -g3 -Wall -Wextra -Werror
 
 all: $(NAME)
 
