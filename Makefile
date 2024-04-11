@@ -6,7 +6,7 @@
 #    By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/28 16:03:03 by ffleitas          #+#    #+#              #
-#    Updated: 2024/04/09 20:04:58 by ffleitas         ###   ########.fr        #
+#    Updated: 2024/04/11 20:36:36 by ffleitas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ NAME = push_swap
 
 LIBFT = libft/libftprintf.a
 
-SRC = push_swap.c stack_init.c push_swap_utils.c error_handler.c
+SRC = push_swap.c stack_init.c push_swap_utils.c error_handler.c rotate.c \
+		swap.c push.c rev_rotate.c
 
 OBJS = $(SRC:.c=.o)
 
