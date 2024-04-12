@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
+/*   By: freddy <freddy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:57:36 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/04/11 20:41:40 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/04/12 13:40:25 by freddy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,7 @@ void	rra(t_node **stack_a, int print);
 void	rrb(t_node **stack_b, int print);
 void	rrr(t_node **stack_a, t_node **stack_b, int print);
 
+//Sort functions
+bool    stack_sorted(t_node *stack);
 
 #endif

@@ -1,41 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   sort_functions.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: freddy <freddy@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/28 15:51:32 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/04/12 13:39:18 by freddy           ###   ########.fr       */
+/*   Created: 2024/04/12 13:34:05 by freddy            #+#    #+#             */
+/*   Updated: 2024/04/12 13:42:56 by freddy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main(int argc, char **argv)
+bool    stack_sorted(t_node *stack)
 {
-	t_node *stack_a;
-	t_node *stack_b;
-
-	stack_a = NULL;
-	stack_b = NULL;
-	if (argc < 2 || (argc == 2 && !argv[1][0]))
-	{
-		ft_printf("Error\n");
-		return (0);
-	}
-	else if (argc == 2)
-	{
-		argv = ft_split(argv[1], ' ');
-		stack_init(&stack_a, argv);
-	}
-	else
-		stack_init(&stack_a, argv + 1);
-	if (stack_sorted(stack_a))
-	{
-		printf("OK\n");
-	}
-	else
-		printf("KO\n");
-	return (0);
+    if (!stack)
+        return (true);
+    while (stack->next)
+    {
+        if (stack->val > stack->next->val)
+            return (false);
+        stack = stack->next;
+    }
+    return (true);
 }

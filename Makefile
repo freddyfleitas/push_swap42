@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+         #
+#    By: freddy <freddy@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/28 16:03:03 by ffleitas          #+#    #+#              #
-#    Updated: 2024/04/11 20:36:36 by ffleitas         ###   ########.fr        #
+#    Updated: 2024/04/12 13:40:42 by freddy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,11 +15,11 @@ NAME = push_swap
 LIBFT = libft/libftprintf.a
 
 SRC = push_swap.c stack_init.c push_swap_utils.c error_handler.c rotate.c \
-		swap.c push.c rev_rotate.c
+		swap.c push.c rev_rotate.c sort_functions.c
 
 OBJS = $(SRC:.c=.o)
 
-CC = gcc -g3 -Wall -Wextra -Werror
+CC = gcc -g3 -Wall -Wextra #-Werror
 
 all: $(NAME)
 
