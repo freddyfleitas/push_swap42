@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 18:50:07 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/04/09 20:00:29 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/04/19 17:25:22 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,12 @@ void	stack_init(t_node **stack_a, char **argv)
 	while (*argv)
 	{
 		if (syntax_error(*argv))
-			free_and_exit(stack_a);
+			free_error(stack_a);
 		number = ft_atol(*argv);
 		if (number > INT_MAX || number < INT_MIN)
-			free_and_exit(stack_a);
+			free_error(stack_a);
 		if (repeated_numbers(*stack_a, (int)number))
-			free_and_exit(stack_a);
+			free_error(stack_a);
 		append_node(stack_a, (int)number);
 		argv ++;
 	}

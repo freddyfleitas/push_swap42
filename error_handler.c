@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 19:43:03 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/04/09 20:12:31 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/04/19 17:27:31 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,19 +37,24 @@ int	repeated_numbers(t_node *stack_a, int number)
 	}
 	return (0);
 }
-void	free_and_exit(t_node **stack_a)
+void	free_stack(t_node **stack)
 {
 	t_node *tmp;
 
-	if (!stack_a)
+	if (!stack)
 		return ;
-	while (*stack_a)
+	while (*stack)
 	{
-		tmp = *stack_a;
-		*stack_a = (*stack_a)->next;
+		tmp = *stack;
+		*stack = (*stack)->next;
 		free(tmp);
 	}
-	*stack_a = NULL;
+	*stack = NULL;
+}
+
+void	free_error(t_node **stack_a)
+{
+	free_stack(stack_a);
 	ft_printf("Error\n");
 	exit(0);
 }

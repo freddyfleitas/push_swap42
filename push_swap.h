@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: freddy <freddy@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:57:36 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/04/12 13:40:25 by freddy           ###   ########.fr       */
+/*   Updated: 2024/04/19 17:27:42 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ long int	ft_atol(const char *str);
 
 //Error handling
 int			syntax_error(char *argv);
-void		free_and_exit(t_node **stack_a);
+void		free_stack(t_node **stack);
+void		free_error(t_node **stack_a);
 int			repeated_numbers(t_node *stack_a, int number);
 
 //Operations Utils
@@ -57,5 +58,12 @@ void	rrr(t_node **stack_a, t_node **stack_b, int print);
 
 //Sort functions
 bool    stack_sorted(t_node *stack);
+void    sort_three(t_node **stack);
+
+//Sort utils
+int    stack_len(t_node *stack);
+t_node  *find_highest(t_node *stack);
+t_node  *find_lower(t_node *stack);
+
 
 #endif

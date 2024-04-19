@@ -6,11 +6,11 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 20:56:30 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/04/11 17:20:18 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/04/19 17:17:11 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static void swap(t_node **head)
 {	
@@ -30,14 +30,14 @@ static void swap(t_node **head)
 void	sa(t_node **stack_a, int print)
 {
 	swap(stack_a);
-	if (!print)
+	if (print)
 		ft_printf("sa\n");
 }
 
 void	sb(t_node **stack_b, int print)
 {
 	swap(stack_b);
-	if (!print)
+	if (print)
 		ft_printf("sb\n");
 }
 
@@ -45,6 +45,6 @@ void ss(t_node **stack_a, t_node **stack_b, int print)
 {
 	swap(stack_a);
 	swap(stack_b);
-	if (!print)
+	if (print)
 		ft_printf("ss\n");
 }
