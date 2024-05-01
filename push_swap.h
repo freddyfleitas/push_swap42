@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:57:36 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/04/19 17:27:42 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/05/01 11:16:00 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,11 +59,12 @@ void	rrr(t_node **stack_a, t_node **stack_b, int print);
 //Sort functions
 bool    stack_sorted(t_node *stack);
 void    sort_three(t_node **stack);
+void    sort_stacks(t_node **stack_a, t_node **stack_b);
 
 //Sort utils
 int    stack_len(t_node *stack);
 t_node  *find_highest(t_node *stack);
-t_node  *find_lower(t_node *stack);
+t_node  *find_lowest(t_node *stack);
 
 
 #endif

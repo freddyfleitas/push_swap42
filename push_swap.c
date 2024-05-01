@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:51:32 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/04/19 17:28:56 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/05/01 10:55:33 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ int main(int argc, char **argv)
 			sa(&stack_a, 1);
 		else if (stack_len(stack_a) == 3)
 			sort_three(&stack_a);
-		/*else
-			sort_stacks(&stack_a, &stack_b);*/
+		else
+			sort_stacks(&stack_a, &stack_b);
 	}
 	else
 		printf("Stack is already sorted ;)\n");

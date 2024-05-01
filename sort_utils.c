@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:36:15 by freddy            #+#    #+#             */
-/*   Updated: 2024/04/19 16:55:51 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/05/01 11:15:13 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,18 +41,18 @@ t_node  *find_highest(t_node *stack)
     return (highest);
 }
 
-t_node  *find_lower(t_node *stack)
+t_node  *find_lowest(t_node *stack)
 {
-    t_node *lower;
+    t_node *lowest;
 
     if (!stack)
         return (NULL);
-    lower = stack;
+    lowest = stack;
     while (stack)
     {
-        if (stack->val < lower->val)
-            lower = stack;
+        if (stack->val < lowest->val)
+            lowest = stack;
         stack = stack->next;
     }
-    return (lower);
+    return (lowest);
 }

@@ -6,7 +6,7 @@
 #    By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/28 16:03:03 by ffleitas          #+#    #+#              #
-#    Updated: 2024/04/19 17:03:10 by ffleitas         ###   ########.fr        #
+#    Updated: 2024/05/01 10:55:33 by ffleitas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,9 +19,9 @@ SRC = push_swap.c stack_init.c stack_utils.c error_handler.c movements/rotate.c 
 
 OBJS = $(SRC:.c=.o)
 
-CC = gcc -g3 -Wall -Wextra #-Werror
+CC = gcc -g3 -Wall -Wextra -Werror
 
-all: $(NAME)
+all: $(NAME) 
 
 $(LIBFT):
 	@$(MAKE) -s -C libft

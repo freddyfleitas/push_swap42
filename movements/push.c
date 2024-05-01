@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 20:56:24 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/04/19 17:16:27 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/05/01 10:48:12 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,14 @@ static void	push(t_node **src, t_node **dst)
 
 void	pa(t_node **stack_a, t_node **stack_b, int print)
 {
-	push(stack_a, stack_b);
+	push(stack_b, stack_a);
 	if (print)
 		ft_printf("pa\n");	
 }
 
 void	pb(t_node **stack_a, t_node **stack_b, int print)
 {
-	push(stack_b, stack_a);
+	push(stack_a, stack_b);
 	if (print)
 		ft_printf("pb\n");	
 }
