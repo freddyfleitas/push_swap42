@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:57:36 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/05/01 11:16:00 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/05/12 15:24:13 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 typedef struct node
 {
 	long int val;
+	long int index;
 	struct node *next;
 	struct node *prev;
 }				t_node;
@@ -57,6 +58,7 @@ void	rrb(t_node **stack_b, int print);
 void	rrr(t_node **stack_a, t_node **stack_b, int print);
 
 //Sort functions
+void	sort(t_node **stack_a, t_node **stack_b);
 bool    stack_sorted(t_node *stack);
 void    sort_three(t_node **stack);
 void    sort_stacks(t_node **stack_a, t_node **stack_b);
@@ -65,6 +67,7 @@ void    sort_stacks(t_node **stack_a, t_node **stack_b);
 int    stack_len(t_node *stack);
 t_node  *find_highest(t_node *stack);
 t_node  *find_lowest(t_node *stack);
+void   stack_index(t_node *stack);
 
 
 #endif

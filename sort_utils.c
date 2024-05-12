@@ -6,11 +6,24 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:36:15 by freddy            #+#    #+#             */
-/*   Updated: 2024/05/01 11:15:13 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/05/10 19:14:53 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void   stack_index(t_node *stack)
+{
+    int i;
+
+    i = 0;
+    while (stack)
+    {
+        stack->index = i;
+        stack = stack->next;
+        i ++;
+    }
+}
 
 int    stack_len(t_node *stack)
 {
