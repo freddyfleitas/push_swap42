@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:57:36 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/05/12 15:24:13 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/05/12 16:21:44 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	rrb(t_node **stack_b, int print);
 void	rrr(t_node **stack_a, t_node **stack_b, int print);
 
 //Sort functions
-void	sort(t_node **stack_a, t_node **stack_b);
+void	sort(t_node **stack_a, t_node **stack_b, int len);
 bool    stack_sorted(t_node *stack);
 void    sort_three(t_node **stack);
 void    sort_stacks(t_node **stack_a, t_node **stack_b);

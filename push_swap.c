@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:51:32 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/05/12 15:30:22 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/05/12 17:27:23 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,8 @@ void	sort(t_node **stack_a, t_node **stack_b, int len)
 		sa(stack_a, 1);
 	else if (len == 3)
 		sort_three(stack_a);
-	else if (len == 4)
-		sort_four(stack_a, stack_b);
-	else if (len == 5)
-		sort_five(stack_a, stack_b);
 	else
-		printf("Not finished yet ):");
+		sort_stacks(stack_a, stack_b);
 }
 
 int main(int argc, char **argv)
