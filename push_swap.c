@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:51:32 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/05/12 17:27:23 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/05/21 20:48:00 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@ void	sort(t_node **stack_a, t_node **stack_b, int len)
 		sa(stack_a, 1);
 	else if (len == 3)
 		sort_three(stack_a);
+	else if (len == 5)
+		sort_five(stack_a, stack_b);
 	else
-		sort_stacks(stack_a, stack_b);
+		big_sort(stack_a, stack_b);
 }
 
 int main(int argc, char **argv)
@@ -42,9 +44,7 @@ int main(int argc, char **argv)
 	else
 		stack_init(&stack_a, argv + 1);
 	if (!stack_sorted(stack_a))
-	{
 		sort(&stack_a, &stack_b, stack_len(stack_a));
-	}
 	free_stack(&stack_a);
 	return (0);
 }

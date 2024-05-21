@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:57:36 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/05/12 16:21:44 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/05/21 20:21:42 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,12 @@
 
 typedef struct node
 {
-	long int val;
-	long int index;
+	int 	val;
+	int 	index;
+	int 	price;
+	bool	above_midpoint;
+	bool	cheapest;
+	struct node *target;
 	struct node *next;
 	struct node *prev;
 }				t_node;
@@ -61,12 +65,15 @@ void	rrr(t_node **stack_a, t_node **stack_b, int print);
 void	sort(t_node **stack_a, t_node **stack_b, int len);
 bool    stack_sorted(t_node *stack);
 void    sort_three(t_node **stack);
-void    sort_stacks(t_node **stack_a, t_node **stack_b);
+void    sort_five(t_node **stack_a, t_node **stack_b);
+void	big_sort(t_node **stack_a, t_node **stack_b);
+void 	move_nodes(t_node **stack_a, t_node **stack_b);
 
 //Sort utils
 int    stack_len(t_node *stack);
 t_node  *find_highest(t_node *stack);
 t_node  *find_lowest(t_node *stack);
+t_node *find_cheapest(t_node *stack);
 void   stack_index(t_node *stack);
 
 

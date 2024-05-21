@@ -6,7 +6,7 @@
 #    By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/28 16:03:03 by ffleitas          #+#    #+#              #
-#    Updated: 2024/05/01 10:55:33 by ffleitas         ###   ########.fr        #
+#    Updated: 2024/05/21 20:37:43 by ffleitas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,10 +16,11 @@ LIBFT = libft/libftprintf.a
 
 SRC = push_swap.c stack_init.c stack_utils.c error_handler.c movements/rotate.c \
 		movements/swap.c movements/push.c movements/rev_rotate.c sort_functions.c sort_utils.c \
+		big_sort.c big_sort2.c
 
 OBJS = $(SRC:.c=.o)
 
-CC = gcc -g3 -Wall -Wextra -Werror
+CC = gcc -g3 -Wall -Wextra -Werror -fsanitize=address
 
 all: $(NAME) 
 
