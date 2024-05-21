@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:51:32 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/05/21 20:48:00 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/05/21 21:11:28 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ void	sort(t_node **stack_a, t_node **stack_b, int len)
 		big_sort(stack_a, stack_b);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_node *stack_a;
-	t_node *stack_b;
+	t_node	*stack_a;
+	t_node	*stack_b;
 
 	stack_a = NULL;
 	stack_b = NULL;

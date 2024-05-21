@@ -6,16 +6,16 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 20:58:30 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/04/19 17:16:40 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/05/21 21:30:12 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static void reverse_rotate(t_node **head)
+static void	reverse_rotate(t_node **head)
 {
-	t_node *last;
-	t_node *first;
+	t_node	*last;
+	t_node	*first;
 
 	if (!*head || !(*head)->next)
 		return ;
@@ -28,21 +28,21 @@ static void reverse_rotate(t_node **head)
 	first->prev = last;
 }
 
-void rra(t_node **stack_a, int print)
+void	rra(t_node **stack_a, int print)
 {
 	reverse_rotate(stack_a);
 	if (print)
 		ft_printf("rra\n");
 }
 
-void rrb(t_node **stack_b, int print)
+void	rrb(t_node **stack_b, int print)
 {
 	reverse_rotate(stack_b);
 	if (print)
 		ft_printf("rrb\n");
 }
 
-void rrr(t_node **stack_a, t_node **stack_b, int print)
+void	rrr(t_node **stack_a, t_node **stack_b, int print)
 {
 	reverse_rotate(stack_a);
 	reverse_rotate(stack_b);

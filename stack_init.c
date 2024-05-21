@@ -6,17 +6,54 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 18:50:07 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/05/21 20:39:09 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/05/21 21:27:22 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+static int	isspace(int c)
+{
+	if (c == '\t' || c == '\n' || c == '\v'
+		|| c == '\f' || c == '\r' || c == ' ')
+	{
+		return (1);
+	}
+	return (0);
+}
+
+long int	ft_atol(const char *str)
+{
+	long int	result;
+	int			sign;
+
+	result = 0;
+	sign = 1;
+	while (isspace(*str))
+	{
+		str ++;
+	}
+	if (*str == '-' || *str == '+')
+	{
+		if (*str == '-')
+		{
+			sign *= -1;
+		}
+		str ++;
+	}
+	while (*str >= '0' && *str <= '9')
+	{
+		result = result * 10 + (*str - '0');
+		str ++;
+	}
+	return (result * sign);
+}
+
 static void	append_node(t_node **stack_a, int number)
 {
-	t_node *new_node;
-	t_node *last_node;
-	
+	t_node	*new_node;
+	t_node	*last_node;
+
 	if (!stack_a)
 		return ;
 	new_node = malloc(sizeof(t_node));
@@ -41,8 +78,8 @@ static void	append_node(t_node **stack_a, int number)
 
 void	stack_init(t_node **stack_a, char **argv)
 {
-	long int number;
-	
+	long int	number;
+
 	while (*argv)
 	{
 		if (syntax_error(*argv))

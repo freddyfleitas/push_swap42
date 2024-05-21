@@ -6,16 +6,16 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 20:56:30 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/04/19 17:17:11 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/05/21 21:33:07 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static void swap(t_node **head)
-{	
-	t_node *tmp;
-	
+static void	swap(t_node **head)
+{
+	t_node	*tmp;
+
 	if (!*head || !(*head)->next)
 		return ;
 	tmp = *head;
@@ -41,7 +41,7 @@ void	sb(t_node **stack_b, int print)
 		ft_printf("sb\n");
 }
 
-void ss(t_node **stack_a, t_node **stack_b, int print)
+void	ss(t_node **stack_a, t_node **stack_b, int print)
 {
 	swap(stack_a);
 	swap(stack_b);
