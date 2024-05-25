@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:51:32 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/05/21 21:11:28 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/05/25 20:59:56 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,12 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	if (argc < 2 || (argc == 2 && !argv[1][0]))
-	{
-		ft_printf("Error\n");
-		return (0);
-	}
+		exit (0);
 	else if (argc == 2)
 	{
 		argv = ft_split(argv[1], ' ');
 		stack_init(&stack_a, argv);
+		free_argv(argv);
 	}
 	else
 		stack_init(&stack_a, argv + 1);

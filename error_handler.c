@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 19:43:03 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/05/21 21:11:02 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/05/25 20:59:39 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,22 @@ void	free_stack(t_node **stack)
 		free(tmp);
 	}
 	*stack = NULL;
+}
+void	free_argv(char **argv)
+{
+	int i;
+	
+	i = 0;
+	if (argv)
+	{
+		while (argv[i])
+		{
+			free(argv[i]);
+			i ++;
+		}
+		free(argv);
+	}
+	return ;
 }
 
 void	free_error(t_node **stack_a)

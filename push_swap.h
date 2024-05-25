@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:57:36 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/05/21 21:18:38 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/05/25 20:57:49 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ typedef struct node
 //Error handling
 int			syntax_error(char *argv);
 void		free_stack(t_node **stack);
+void		free_argv(char **argv);
 void		free_error(t_node **stack_a);
 int			repeated_numbers(t_node *stack_a, int number);
 
