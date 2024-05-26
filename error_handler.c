@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 19:43:03 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/05/25 20:59:39 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/05/26 18:11:04 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,5 @@ void	free_argv(char **argv)
 void	free_error(t_node **stack_a)
 {
 	free_stack(stack_a);
-	ft_printf("Error\n");
-	exit(0);
+	exit(write(2, "Error\n", 6));
 }

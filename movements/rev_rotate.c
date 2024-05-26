@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 20:58:30 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/05/21 21:30:12 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/05/26 14:50:12 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	reverse_rotate(t_node **head)
 	t_node	*last;
 	t_node	*first;
 
-	if (!*head || !(*head)->next)
+	if (head || !*head || !(*head)->next)
 		return ;
 	last = find_last(*head);
 	first = *head;

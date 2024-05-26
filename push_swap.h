@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:57:36 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/05/25 20:57:49 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/05/26 16:37:01 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ typedef struct node
 	int			price;
 	bool		above_midpoint;
 	bool		cheapest;
+	bool		assigned;
 	struct node	*target;
 	struct node	*next;
 	struct node	*prev;
