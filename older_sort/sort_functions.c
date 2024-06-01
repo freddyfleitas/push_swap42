@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 13:34:05 by freddy            #+#    #+#             */
-/*   Updated: 2024/05/21 21:21:22 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/06/01 20:24:36 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	sort_three(t_node **stack)
 	}
 }
 
-void	sort_five(t_node **stack_a, t_node **stack_b)
+/* void	sort_five(t_node **stack_a, t_node **stack_b)
 {
 	t_node	*lowest;
 
@@ -62,4 +62,4 @@ void	sort_five(t_node **stack_a, t_node **stack_b)
 	sort_three(stack_a);
 	while (*stack_b)
 		pa(stack_a, stack_b, 1);
-}
+} */
