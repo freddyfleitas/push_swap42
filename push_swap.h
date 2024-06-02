@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:57:36 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/06/01 20:30:02 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/06/02 00:32:34 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ typedef struct node
 	int			target_index;
 	int			cost_a;
 	int			cost_b;
-	bool		above_midpoint;
 	bool		assigned;
 	struct node	*next;
 	struct node	*prev;
@@ -81,8 +80,8 @@ bool		is_sorted(t_node *stack);
 //Push Swap Utils
 void		stack_init(t_node **stack_a, char **argv);
 long int	ft_atol(const char *str);
-/* t_node		*find_last(t_node *head);
-int			stack_len(t_node *stack);
+t_node		*find_last(t_node *head);
+/*int			stack_len(t_node *stack);
 t_node		*find_highest(t_node *stack);
 t_node		*find_lowest(t_node *stack);
 t_node		*find_cheapest(t_node *stack);

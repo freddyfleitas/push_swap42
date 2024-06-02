@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 16:15:21 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/06/01 20:33:43 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/06/02 02:05:51 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,35 @@ static void	init_positions(t_node *stack_a, t_node *stack_b)
 		cur_b = cur_b->next;
 	}
 }
-void	sort_three(t_node *stack)
+
+static void push_to_b(t_node **stack_a, t_node **stack_b) REVISAR LA FUNCIÓN
 {
-	if (stack->index > stack->next->index
-		&&	stack->index > stack->next->next->index)
-		ra(&stack, 1);
-	else if (stack->next->index > stack->index
-		&&	stack->next->index > stack->next->next->index)
-		rra(&stack, 1);
-	if (stack->index > stack->next->index)
-		sa(&stack, 1);
+    t_node *a;
+    t_node *b;
+    int len;
+    int pushed;
+
+    a = *stack_a;
+    b = *stack_b;
+    len = stack_len(a);
+    pushed = 0;
+    
+    while (stack_len(a) > 3 && pushed < len / 2)
+    {
+        if (a->index <= len / 2)
+        {
+            pb(&a, &b, 1);
+            pushed++;
+        }
+        else
+            ra(&a, 1);
+    }
+    
+    while (stack_len(a) > 3)
+        pb(&a, &b, 1);
 }
+
+
 void	sort_stacks(t_node **stack_a, t_node **stack_b)
 {
 	t_node *lowest;

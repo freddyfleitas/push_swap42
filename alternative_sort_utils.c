@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 20:06:01 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/06/01 20:23:17 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/06/02 00:32:26 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,19 +47,13 @@ void    assign_index(t_node *stack)
 void	current_index(t_node *stack)
 {
 	int	i;
-	int	midpoint;
 
 	i = 0;
-	midpoint = stack_len(stack) / 2;
 	if (!stack)
 		return ;
 	while (stack)
 	{
 		stack->current_index = i;
-		if (i <= midpoint)
-			stack->above_midpoint = true;
-		else
-			stack->above_midpoint = false;
 		stack = stack->next;
 		i ++;
 	}
@@ -87,8 +81,8 @@ bool	is_sorted(t_node *stack)
 	while (stack->next)
 	{
 		if (stack->index > stack->next->index)
-			return (false);
+			return (true);
 		stack = stack->next;
 	}
-	return (true);
+	return (false);
 }
