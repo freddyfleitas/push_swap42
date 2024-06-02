@@ -6,7 +6,7 @@
 #    By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/28 16:03:03 by ffleitas          #+#    #+#              #
-#    Updated: 2024/06/02 02:02:41 by ffleitas         ###   ########.fr        #
+#    Updated: 2024/06/02 21:27:05 by ffleitas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ LIBFT = libft/libftprintf.a
 
 SRC = push_swap.c stack_init.c error_handler.c movements/rotate.c \
 		movements/swap.c movements/push.c movements/rev_rotate.c \
-		sort_three.c alternative_sort.c alternative_sort_utils.c
+		sort.c sort_utils.c index_utils.c
 
 OBJS = $(SRC:.c=.o)
 

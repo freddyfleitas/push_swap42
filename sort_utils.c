@@ -1,25 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_three.c                                       :+:      :+:    :+:   */
+/*   alternative_sort_utils.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/02 00:17:37 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/06/02 00:17:59 by ffleitas         ###   ########.fr       */
+/*   Created: 2024/06/01 20:06:01 by ffleitas          #+#    #+#             */
+/*   Updated: 2024/06/02 21:25:25 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_three(t_node *stack)
+int	stack_len(t_node *stack)
 {
-	if (stack->index > stack->next->index 
-		&& stack->index > stack->next->next->index)
-		ra(&stack, 1);
-	else if (stack->next->index > stack->index 
-		&& stack->next->index > stack->next->next->index)
-		rra(&stack, 1);
-	if (stack->index > stack->next->index)
-		sa(&stack, 1);
+	int	len;
+
+	len = 0;
+	if (!stack)
+		return (0);
+	while (stack)
+	{
+		stack = stack->next;
+		len++;
+	}
+	return (len);
+}
+
+bool	is_sorted(t_node *stack)
+{
+	if (!stack)
+		return (true);
+	while (stack->next)
+	{
+		if (stack->index > stack->next->index)
+			return (true);
+		stack = stack->next;
+	}
+	return (false);
 }

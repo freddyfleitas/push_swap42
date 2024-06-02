@@ -6,31 +6,32 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:51:32 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/06/02 02:05:12 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/06/02 21:30:54 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* void	sort(t_node **stack_a, t_node **stack_b, int len)
+void	sort_three(t_node *stack)
 {
-	if (len == 2)
-		sa(stack_a, 1);
-	else if (len == 3)
-		sort_three(stack_a);
-	else if (len == 5)
-		sort_five(stack_a, stack_b);
-	else
-		big_sort(stack_a, stack_b);
-} */
-static void	alternative_sort(t_node **stack_a, t_node **stack_b, int len)
+	if (stack->index > stack->next->index 
+		&& stack->index > stack->next->next->index)
+		ra(&stack, 1);
+	else if (stack->next->index > stack->index 
+		&& stack->next->index > stack->next->next->index)
+		rra(&stack, 1);
+	if (stack->index > stack->next->index)
+		sa(&stack, 1);
+}
+
+static void	sort(t_node **stack_a, t_node **stack_b, int len)
 {
 	if (len == 2)
 		sa(stack_a, 1);
 	else if (len == 3)
 		sort_three(*stack_a);
-	/* else
-		sort_stacks(stack_a, stack_b); */
+	else
+		sort_stacks(stack_a, stack_b);
 }
 
 int	main(int argc, char **argv)
@@ -53,7 +54,7 @@ int	main(int argc, char **argv)
 	if (!is_sorted(stack_a))
 	{
 		assign_index(stack_a);
-		alternative_sort(&stack_a, &stack_b, stack_len(stack_a));
+		sort(&stack_a, &stack_b, stack_len(stack_a));
 	}
 	free_stack(&stack_a);
 	free_stack(&stack_b); //Check this free
