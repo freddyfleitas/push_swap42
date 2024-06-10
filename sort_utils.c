@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   alternative_sort_utils.c                           :+:      :+:    :+:   */
+/*   sort_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 20:06:01 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/06/02 21:25:25 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/06/10 19:06:58 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ bool	is_sorted(t_node *stack)
 	while (stack->next)
 	{
 		if (stack->index > stack->next->index)
-			return (true);
+			return (false);
 		stack = stack->next;
 	}
-	return (false);
+	return (true);
 }

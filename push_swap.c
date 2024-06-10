@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:51:32 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/06/02 21:30:54 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/06/10 19:10:10 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,15 @@ void	sort_three(t_node *stack)
 
 static void	sort(t_node **stack_a, t_node **stack_b, int len)
 {
-	if (len == 2)
-		sa(stack_a, 1);
-	else if (len == 3)
-		sort_three(*stack_a);
-	else
-		sort_stacks(stack_a, stack_b);
+	if (!is_sorted(*stack_a))
+	{
+		if (len == 2)
+			sa(stack_a, 1);
+		else if (len == 3)
+			sort_three(*stack_a);
+		else
+			sort_stacks(stack_a, stack_b);
+	}
 }
 
 int	main(int argc, char **argv)
@@ -51,11 +54,8 @@ int	main(int argc, char **argv)
 	}
 	else
 		stack_init(&stack_a, argv + 1);
-	if (!is_sorted(stack_a))
-	{
-		assign_index(stack_a);
-		sort(&stack_a, &stack_b, stack_len(stack_a));
-	}
+	assign_index(stack_a);
+	sort(&stack_a, &stack_b, stack_len(stack_a));
 	free_stack(&stack_a);
 	free_stack(&stack_b); //Check this free
 	return (0);
