@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:51:32 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/06/13 21:40:57 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/06/13 21:50:47 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,6 @@ int	main(int argc, char **argv)
 	assign_index(stack_a);
 	sort(&stack_a, &stack_b, stack_len(stack_a));
 	free_stack(&stack_a);
-	free_stack(&stack_b); //Check this free
+	free_stack(&stack_b); //Check this free */
 	return (0);
 }

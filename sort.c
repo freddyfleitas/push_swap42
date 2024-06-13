@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 16:15:21 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/06/13 21:37:22 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/06/13 21:59:50 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,11 @@ static void push_to_b(t_node **stack_a, t_node **stack_b)
             ra(stack_a, 1);
 		i ++;
     }
-    while (stack_len(*stack_a) > 3)
+    while (len - pushed > 3)
+	{
         pb(stack_a, stack_b, 1);
+		pushed ++;
+	}
 }
 
 static int	get_lowest(t_node *stack_a, int holder)
