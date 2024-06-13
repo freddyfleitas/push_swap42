@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 21:25:07 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/06/12 21:33:46 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/06/13 22:17:43 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ static void rr_both (t_node **stack_a, t_node **stack_b, int *cost_a,
 {
     while (*cost_a < 0 && *cost_b < 0)
     {
-        rrr(stack_a, stack_b, 1);
         (*cost_a)++;
         (*cost_b)++;
+        rrr(stack_a, stack_b, 1);
     }
 }
 
@@ -28,9 +28,9 @@ static  void r_both (t_node **stack_a, t_node **stack_b, int *cost_a,
 {
     while (*cost_a > 0 && *cost_b > 0)
     {
-        rr(stack_a, stack_b, 1);
         (*cost_a)--;
         (*cost_b)--;
+        rr(stack_a, stack_b, 1);
     }
 }
 
@@ -43,7 +43,7 @@ static void rotate_a(t_node **stack_a, int *cost)
             ra(stack_a, 1);
             (*cost)--;
         }
-        else
+        else if (*cost < 0)
         {
             rra(stack_a, 1);
             (*cost)++;
@@ -60,7 +60,7 @@ static void rotate_b(t_node **stack_b, int *cost)
             rb(stack_b, 1);
             (*cost)--;
         }
-        else
+        else if (*cost < 0)
         {
             rrb(stack_b, 1);
             (*cost)++;

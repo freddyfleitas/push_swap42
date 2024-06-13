@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 18:30:56 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/06/12 21:36:19 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/06/13 22:14:01 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ void    cheapest_move(t_node **stack_a, t_node **stack_b)
     cheapest = INT_MAX;
     while (cur_b)
     {
-        if (ft_abs(cost_a) + ft_abs(cost_b) < cheapest)
+        if (ft_abs(cur_b->cost_a) + ft_abs(cur_b->cost_b) < cheapest)
         {
-            cheapest = ft_abs(cost_a) + ft_abs(cost_b);
+            cheapest = ft_abs(cur_b->cost_a) + ft_abs(cur_b->cost_b);
             cost_a = cur_b->cost_a;
             cost_b = cur_b->cost_b;
         }
