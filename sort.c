@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 16:15:21 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/06/10 19:46:46 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/06/13 21:37:22 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ static void push_to_b(t_node **stack_a, t_node **stack_b)
 {
     int len;
     int pushed;
-	int counter;
+	int i;
 
     len = stack_len(*stack_a);
     pushed = 0;
-	counter = 0;
+	i = 0;
     
-    while (stack_len(*stack_a) > 3 && counter < len && pushed < len / 2)
+    while (len > 3 && i < len && pushed < len / 2)
     {
         if ((*stack_a)->index <= len / 2)
         {
@@ -32,7 +32,7 @@ static void push_to_b(t_node **stack_a, t_node **stack_b)
         }
         else
             ra(stack_a, 1);
-		counter ++;
+		i ++;
     }
     while (stack_len(*stack_a) > 3)
         pb(stack_a, stack_b, 1);
@@ -102,17 +102,49 @@ static void	init_positions(t_node *stack_a, t_node *stack_b)
 	}
 }
 
+static void finish_sort(t_node **stack_a)
+{
+    int len;
+    int counter;
+    t_node *temp;
+
+    len = stack_len(*stack_a);
+    counter = 0;
+    temp = *stack_a;
+    while (temp && temp->index != 1)
+    {
+        temp = temp->next;
+        counter++;
+    }
+    if (counter > len / 2)
+    {
+        while (counter < len)
+        {
+            rra(stack_a, 1); 
+            counter++;
+        }
+    }
+    else
+    {
+        while (counter > 0)
+        {
+            ra(stack_a, 1); 
+            counter--;
+        }
+    }
+}
+
+
 void	sort_stacks(t_node **stack_a, t_node **stack_b)
 {
 	push_to_b(stack_a, stack_b); 
-	sort_three(*stack_a);
+	sort_three(stack_a);
 	while (*stack_b)
 	{
 		init_positions(*stack_a, *stack_b);
-		pa(stack_a, stack_b, 1);
-		// assign_price(*stack_a, *stack_b);
-		// push_to_a(stack_a, stack_b);
+		assign_price(*stack_a, *stack_b);
+		move_nodes(stack_a, stack_b, (*stack_b)->cost_a, (*stack_b)->cost_b);
 	}
-	// if (!is_sorted(*stack_a))
-	// 	finish_sort(stack_a); 
+	if (!is_sorted(*stack_a))
+		finish_sort(stack_a);
 }
