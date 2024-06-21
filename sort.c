@@ -6,7 +6,7 @@
 /*   By: ffleitas <ffleitas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 16:15:21 by ffleitas          #+#    #+#             */
-/*   Updated: 2024/06/13 21:59:50 by ffleitas         ###   ########.fr       */
+/*   Updated: 2024/06/21 19:40:19 by ffleitas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,14 +61,12 @@ static int	get_lowest(t_node *stack_a, int holder)
 }
 
 
-static int get_target(t_node *stack_a, int index_b, int holder)
+static int get_target(t_node *stack_a, int index_b, int holder,
+		int target)
 {
 	t_node	*cur_a;
 
 	cur_a = stack_a;
-	int	target;
-
-	target = 0;
 	// Target: should be the closest_larger;
 	while (cur_a)
 	{
@@ -81,10 +79,15 @@ static int get_target(t_node *stack_a, int index_b, int holder)
 	}
 	if (holder != INT_MAX)
 		return (target);
-	else
+	cur_a = stack_a;
+	while (cur_a)
 	{
-		target = get_lowest(stack_a, holder);
-		return (target);
+		if (cur_a->index < target)
+		{
+			holder = cur_a-> index;
+			target = cur_a -> current_index;
+		}
+		cur_a = cur_a->next;
 	}
 }
 
@@ -99,7 +102,7 @@ static void	init_positions(t_node *stack_a, t_node *stack_b)
 	target = 0;
 	while (cur_b)
 	{
-		target = get_target(stack_a, cur_b->index, INT_MAX);
+		target = get_target(stack_a, cur_b->index, INT_MAX, target);
 		cur_b->target_index = target;
 		cur_b = cur_b->next;
 	}
@@ -146,7 +149,7 @@ void	sort_stacks(t_node **stack_a, t_node **stack_b)
 	{
 		init_positions(*stack_a, *stack_b);
 		assign_price(*stack_a, *stack_b);
-		move_nodes(stack_a, stack_b, (*stack_b)->cost_a, (*stack_b)->cost_b);
+		cheapest_move(stack_a, stack_b);
 	}
 	if (!is_sorted(*stack_a))
 		finish_sort(stack_a);
